@@ -13,7 +13,7 @@ This project serves as a Proof of Concept (PoC) for automating modern DevOps wor
 
 ## 1.What? (The Concept)
 
-**What did I built?**
+**What I built?**
 I built a **CI/CD Pipeline**. <br> It is an automated workflow that listens for changes in our code repository.<br>
   When code is pushed, it automatically:
   
@@ -58,10 +58,9 @@ nodejs-demo-app/
 ├── node_modules/            # Dependencies (Ignored by Git, exists locally)
 │
 ├── .gitignore               # Tells Git to ignore node_modules
+├── app.js                 # The main Node.js application file
 ├── Dockerfile               # Instructions to build the Docker image
 ├── ERROR_LOG.md             # Your record of bugs and fixes
-├── index.js                 # The main Node.js application file
-├── NOTES.md                 # Your learning notes (What, Why, How)
 ├── package.json             # App metadata and scripts (start, test)
 ├── package-lock.json        # Exact version lock for dependencies
 └── README.md                # Project documentation for viewers
@@ -101,6 +100,7 @@ sequenceDiagram
 
 ## [Workflow Steps]
 <details>
+  <summary>Click to view detailed steps</summary>
 The pipeline consists of a single job build-and-deploy containing the following steps:
 
   * Checkout Code: Pulls the latest code from the repository.
@@ -133,8 +133,11 @@ git clone [https://github.com/Indra1806/nodejs-demo-app.git](https://github.com/
 
 ``` Bash
 cd nodejs-demo-app
-Build Docker Image: docker build -t nodejs-demo-app .
-Run Container: docker run -p 3000:3000 nodejs-demo-app
+
+#Build Docker Image:
+docker build -t nodejs-demo-app .
+#Run Container:
+docker run -p 3000:3000 nodejs-demo-app
 ```
 
 
@@ -224,3 +227,5 @@ In the YAML file, they are accessed via the <kbd>${{ secrets.SECRET_NAME }}</kbd
 #### 8. How can you test a CI/CD pipeline locally?
 We can use a tool called **Act**.<br>
 It allows us to run **GitHub Actions** locally by spinning up Docker containers that simulate the GitHub runner environment.
+
+* [Error_Log](ERROR_LOG.md)
