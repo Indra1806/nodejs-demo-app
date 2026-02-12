@@ -1,7 +1,9 @@
 # [Troubleshooting & Error Log]
 
 ## 1. Git Push Rejected (Non-Fast-Forward)
+
 ### The Error
+
 ```text
 ! [rejected]        main -> main (fetch first)
 error: failed to push some refs to '[https://github.com/Indra1806/nodejs-demo-app.git](https://github.com/Indra1806/nodejs-demo-app.git)'
@@ -130,7 +132,7 @@ Modified `package.json` to return exit code 0 (success) for the purpose of this 
 
 Needed to rename files without losing Git history or creating "deleted/untracked" file confusion.
 
-### ✅ The Solution
+### The Solution
 
 Used the specific Git command to handle the move and staging in one step:
 
